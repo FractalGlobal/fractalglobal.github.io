@@ -1,0 +1,20 @@
+<!-- jQuery is required by Materialize to function -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/js/materialize.min.js"></script>
+<script type="text/javascript">
+	//custom JS code
+	$(document).ready(function(){
+		$('.collapsible').collapsible();
+		$('.materialboxed').materialbox();
+		$('.button-collapse').sideNav();
+		//$(".dropdown-button").dropdown();
+		Materialize.fadeInImage('#top-div-fades')
+		var options = [
+			{selector: '#hdd-feature', offset: 100, callback: 'Materialize.fadeInImage("#hdd-feature")' },
+			{selector: '#at-feature', offset: 100, callback: 'Materialize.fadeInImage("#at-feature")' },
+			{selector: '#encrypted-feature', offset: 100, callback: 'Materialize.fadeInImage("#encrypted-feature")' },
+			{selector: '#asset-feature', offset: 100, callback: 'Materialize.fadeInImage("#asset-feature")' }
+		];
+		Materialize.scrollFire(options);
+	});
+</script>

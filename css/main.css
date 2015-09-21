@@ -1,0 +1,84 @@
+html{
+	overflow-x:hidden;
+}
+.page-contents{
+	height:auto;
+	margin:0;
+	padding:0;
+}
+nav ul.desktop-navigation li.active,nav ul.desktop-navigation li:hover{
+	background:rgba(0,0,0,0);
+}
+nav ul.desktop-navigation li.active a {
+	border-bottom:3px solid #fff;
+	padding:16px 15px 7px 15px;
+	line-height:32px;
+	margin-bottom: 6px;
+}
+/*nav ul.desktop-navigation li:hover a {
+	border-bottom:3px solid rgba(255,255,255,0.5);
+	padding:16px 20px 7px 20px;
+	line-height:32px;
+	margin-bottom: 6px;
+}*/
+nav ul.desktop-navigation li a {
+	padding:16px 15px 7px 15px;
+	line-height:32px;
+	margin-bottom: 6px;
+}
+nav a img{
+	max-height:64px;
+	padding:12px;
+}
+.top-div .valign-wrapper{
+	min-height:350px;
+	height:100vh;
+}
+.top-div h1{
+	padding:50px 0 50px 0;
+	margin:0;
+	list-style-type:circle;
+}
+.top-div ul{
+	padding-top:60px;
+	margin-left: 0;
+    padding-left: 3em;
+    list-style-position: outside;
+	font-size:16px;
+}
+.top-div li:before {
+	content: "\2605";
+}
+.top-div li{
+	display: inline;
+	padding:40px 10px 40px 10px;
+}
+.top-div .download-btn:hover{
+	background:rgba(255,255,255,0.1);
+}
+.valign{
+	width:100%;
+}
+.features-div{
+	padding:40px 0;
+}
+.features-div .row{
+	padding:30px 0;
+}
+.features-div img{
+	padding:30% 18%;
+	height:auto;
+}
+.fade-ins{
+	opacity:0;
+}
+.mce_inline_error{
+	background-color: transparent !important;
+}
+.nxt-div{
+	padding:75px 0;
+	margin:-20px;
+}
+.wallet-div{
+	padding:25px 0;
+}
