@@ -82,3 +82,37 @@ nav a img{
 .wallet-div{
 	padding:25px 0;
 }
+
+#loader{
+	height:100vh;
+	position:fixed;
+	background:white;
+	z-index:1001;
+	width:100%;
+}
+#loader img.spinning{
+	height:100px;
+	width:auto;
+	margin:auto;
+}
+
+@-moz-keyframes spin {
+	from { -moz-transform: rotate(0deg); }
+	to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+.spinning{
+	-webkit-animation: spin 4s infinite linear;
+	-moz-animation: spin 4s infinite linear;
+	-ms-animation: spin 4s infinite linear;
+
+	animation: spin 4s infinite linear;
+}
