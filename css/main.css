@@ -110,9 +110,9 @@ nav a img{
 }
 
 .spinning{
-	-webkit-animation: spin 4s infinite linear;
-	-moz-animation: spin 4s infinite linear;
-	-ms-animation: spin 4s infinite linear;
+	-webkit-animation: spin 2s infinite linear;
+	-moz-animation: spin 2s infinite linear;
+	-ms-animation: spin 2s infinite linear;
 
-	animation: spin 4s infinite linear;
+	animation: spin 2s infinite linear;
 }
