@@ -31,13 +31,13 @@
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			//changePage(href);
-			$("#page-body").load( href + "#page-body");
+			$("#page-body").load( href + " #page-body");
 			$("#loader").hide();
 		}
 	});
 	window.onpopstate = function(e){
 		$("#loader").show();
-		$("#page-body").load("http://fractalglobal.github.io" + location.pathname + "#page-body");
+		$("#page-body").load("http://fractalglobal.github.io" + location.pathname + " #page-body");
 		$("#loader").hide();
 	};
 	
