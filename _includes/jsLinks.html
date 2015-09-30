@@ -32,15 +32,27 @@
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			//changePage(href);
+			
+			$('#page-body').fadeOut('slow', function(){
+				$("#loader").show();
+				$('#page-body').load(href + " #page-body-inner", function(){
+					$("#loader").hide();
+					$('#primary').fadeIn('slow');
+				});
+			});
+			/*
 			$("#page-body").load( href + " #page-body-inner",function(){
 				$("#loader").hide();
-			});
+			});*/
 		}
 	});
 	window.onpopstate = function(e){
-		$("#loader").show();
-		$("#page-body").load("http://fractalglobal.github.io" + location.pathname + " #page-body-inner",function(){
-			$("#loader").hide();
+		$('#page-body').fadeOut('slow', function(){
+			$("#loader").show();
+			$('#page-body').load("http://fractalglobal.github.io" + location.pathname + " #page-body-inner", function(){
+				$("#loader").hide();
+				$('#primary').fadeIn('slow');
+			});
 		});
 	};
 	
