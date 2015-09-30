@@ -1,6 +1,6 @@
 {% for node in pages_list %}
 	{% if group == null or group == node.group %}
-		{{if node.subgroup == null}}
+		{{if node.subgroup == nil}}
 			{% if page.url == node.url %}
 				<li class="active"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
 			{% else %}
