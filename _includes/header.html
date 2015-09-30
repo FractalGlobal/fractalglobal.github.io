@@ -12,7 +12,7 @@
 	<nav>
 		<div class="nav-wrapper blue darken-4">
 			<div class='container'>
-				<a href="" class="brand-logo">
+				<a href="{{site.url}}" class="internal-link brand-logo">
 					<img src='{{ site.url }}/img/logo_inverse.png'>
 				</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -20,27 +20,12 @@
 					{% assign pages_list = site.pages %}
 					{% assign group = 'nav' %}
 					{% include pages_list.html %}
-					<li><a href="https://burstforum.com">Forum</a></li>
-					<li><a href="http://burstcoin.biz">Block explorer</a></li>
-					<li><a href="http://faucet.burstcoin.info">Faucet</a></li>
-					<li>
-						<a class="dropdown-button" data-activates="exchange-dropdown">Exchanges <i class="material-icons right" style='margin-top:-14px;'>arrow_drop_down</i></a>
-						<ul id="exchange-dropdown" class="dropdown-content">
-							<li><a href="https://poloniex.com/exchange#btc_burst">Poloniex</a></li>
-							<li><a href="https://bittrex.com/Market/?MarketName=BTC-BURST">Bittrex</a></li>
-							<li><a href="https://c-cex.com/?p=burst-btc">C-CEX</a></li>
-						</ul>
-					</li>
 				</ul>
 			</div>
 			<ul class="side-nav" id="mobile-demo">
 				{% assign pages_list = site.pages %}
 				{% assign group = 'nav' %}
 				{% include pages_list.html %}
-				<li><a href="https://burstforum.com">Forum</a></li>
-				<li><a href="http://burstcoin.biz">Block explorer</a></li>
-				<li><a href="http://faucet.burstcoin.info">Faucet</a></li>
-				<li><a class="dropdown-button" href="#!" data-activates="exchange-dropdown">Exchanges <i class="material-icons right" style='margin-top:-14px;'>arrow_drop_down</i></a></li>
 			</ul>
 		</div>
 	</nav>
