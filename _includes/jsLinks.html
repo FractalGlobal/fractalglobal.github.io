@@ -20,7 +20,6 @@
 	
 	//Function
 	function changePage(href){
-		sideNav('hide');
 		$('#page-body').fadeOut('slow', function(){
 			$("#loader").show();
 			$('#page-body').load(href + " #page-body-inner", function(){
