@@ -1,4 +1,5 @@
 <!-- page-body div for fast page switching excluding scripts and css-->
+	</div>
 </div>
 
 <!-- jQuery is required by Materialize to function -->
@@ -31,14 +32,14 @@
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			//changePage(href);
-			$("#page-body").load( href + " #page-body",function(){
+			$("#page-body").load( href + " #page-body-inner",function(){
 				$("#loader").hide();
 			});
 		}
 	});
 	window.onpopstate = function(e){
 		$("#loader").show();
-		$("#page-body").load("http://fractalglobal.github.io" + location.pathname + " #page-body",function(){
+		$("#page-body").load("http://fractalglobal.github.io" + location.pathname + " #page-body-inner",function(){
 			$("#loader").hide();
 		});
 	};
