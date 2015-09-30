@@ -26,15 +26,19 @@
 	// Page changing
 	$(document).on("click", "a.internal-link", function(e){
 		if (typeof(window.history.pushState) === typeof(Function)){
+			$("#loader").show();
 			e.preventDefault();
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			//changePage(href);
 			$("#page-body").load( href + "#page-body");
+			$("#loader").hide();
 		}
 	});
 	window.onpopstate = function(e){
+		$("#loader").show();
 		$("#page-body").load("http://fractalglobal.github.io" + location.pathname + "#page-body");
+		$("#loader").hide();
 	};
 	
 </script>
