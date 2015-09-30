@@ -25,6 +25,17 @@
 	
 	
 	// Page changing
+	
+	//Function
+	function changePage(href){
+		$('#page-body').fadeOut('slow', function(){
+			$("#loader").show();
+			$('#page-body').load(href + " #page-body-inner", function(){
+				$("#loader").hide();
+				$('#page-body').fadeIn('slow');
+			});
+		});
+	}
 	$(document).on("click", ".internal-link", function(e){
 		if (typeof(window.history.pushState) === typeof(Function)){
 			$("#loader").show();
@@ -33,13 +44,7 @@
 			history.pushState(null, null, href);
 			//changePage(href);
 			
-			$('#page-body').fadeOut('slow', function(){
-				$("#loader").show();
-				$('#page-body').load(href + " #page-body-inner", function(){
-					$("#loader").hide();
-					$('#page-body').fadeIn('slow');
-				});
-			});
+			changePage(href)
 			/*
 			$("#page-body").load( href + " #page-body-inner",function(){
 				$("#loader").hide();
@@ -47,13 +52,7 @@
 		}
 	});
 	window.onpopstate = function(e){
-		$('#page-body').fadeOut('slow', function(){
-			$("#loader").show();
-			$('#page-body').load("http://fractalglobal.github.io" + location.pathname + " #page-body-inner", function(){
-				$("#loader").hide();
-				$('#page-body').fadeIn('slow');
-			});
-		});
+		changePage("http://fractalglobal.github.io" + location.pathname)
 	};
 	
 </script>
