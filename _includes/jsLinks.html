@@ -25,7 +25,7 @@
 	
 	
 	// Page changing
-	$(document).on("click", "a.internal-link", function(e){
+	$(document).on("click", ".internal-link", function(e){
 		if (typeof(window.history.pushState) === typeof(Function)){
 			$("#loader").show();
 			e.preventDefault();
