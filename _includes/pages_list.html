@@ -8,7 +8,7 @@
 
 		<!-- Dropdown -->
 		{% for subnode in pages_list %}
-			{% if node.subgroup == null or node.subgroup == subnode.group %}
+			{% if node.subgroup == subnode.group %}
 				{% if page.url == subnode.url %}
 					<li class="active"><a class='blue-grey-text internal-link' href="{{subnode.url}}" class="active">{{subnode.title}}</a></li>
 				{% else %}
