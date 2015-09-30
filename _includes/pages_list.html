@@ -1,12 +1,6 @@
 {% for node in pages_list %}
 	{% if group == null or group == node.group %}
-		{{if node.subgroup == nil}}
-			{% if page.url == node.url %}
-				<li class="active"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
-			{% else %}
-				<li><a class='blue-grey-text internal-link' href="{{node.url}}">{{node.title}}</a></li>
-			{% endif %}
-		{{else}}
+		{{if node.subgroup}}
 			<!-- Dropdown -->
 			<li class="no-padding">
 				<ul class="collapsible collapsible-accordion">
@@ -28,6 +22,12 @@
 					</li>
 				</ul>
 			</li>
+		{{else}}
+			{% if page.url == node.url %}
+				<li class="active"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
+			{% else %}
+				<li><a class='blue-grey-text internal-link' href="{{node.url}}">{{node.title}}</a></li>
+			{% endif %}
 		{{endif}}
 	{% endif %}
 {% endfor %}
