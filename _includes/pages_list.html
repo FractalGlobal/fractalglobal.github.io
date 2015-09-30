@@ -5,6 +5,11 @@
 		{% else %}
 			<li><a class='blue-grey-text internal-link' href="{{node.url}}">{{node.title}}</a></li>
 		{% endif %}
+
+		<!-- Dropdown -->
+		{% assign pages_list = site.pages %}
+		{% assign group = node.group %}
+		{% include pages_list.html %}
 	{% endif %}
 {% endfor %}
 

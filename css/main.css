@@ -168,6 +168,7 @@ nav a img{
 	}
 }
 #docs-menu{
+	z-index: 2;
 	/*padding-top:60px*/
 }
 a.site-title{
