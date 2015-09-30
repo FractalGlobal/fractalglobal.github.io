@@ -1,5 +1,5 @@
 ---
-title: Mining | Docs
+title: Getting started
 layout: docs
 permalink: /docs/mining/
 group: "docs"
