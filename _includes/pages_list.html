@@ -7,9 +7,16 @@
 		{% endif %}
 
 		<!-- Dropdown -->
-		{% assign pages_list = site.pages %}
-		{% assign group = node.group %}
-		{% include pages_list.html %}
+		{% for subnode in pages_list %}
+			{% if node.subgroup == null or node.subgroup == subnode.group %}
+				{% if page.url == subnode.url %}
+					<li class="active"><a class='blue-grey-text internal-link' href="{{subnode.url}}" class="active">{{subnode.title}}</a></li>
+				{% else %}
+					<li><a class='blue-grey-text internal-link' href="{{subnode.url}}">{{subnode.title}}</a></li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+
 	{% endif %}
 {% endfor %}
 
