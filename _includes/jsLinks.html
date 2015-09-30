@@ -1,3 +1,6 @@
+<!-- page-body div for fast page switching excluding scripts and css-->
+</div>
+
 <!-- jQuery is required by Materialize to function -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/js/materialize.min.js"></script>
@@ -18,5 +21,20 @@
 		Materialize.scrollFire(options);
 		$("#loader").fadeOut(600).hide();
 	});
+	
+	
+	// Page changing
+	$(document).on("click", "a.internal-link", function(e){
+		if (typeof(window.history.pushState) === typeof(Function)){
+			e.preventDefault();
+			var href = $(this).attr("href");
+			history.pushState(null, null, href);
+			//changePage(href);
+			$("#page-body").load( href + "#page-body");
+		}
+	});
+	window.onpopstate = function(e){
+		$("#page-body").load("http://fractalglobal.github.io" + location.pathname + "#page-body");
+	};
 	
 </script>

@@ -1,3 +1,4 @@
+<div id='page-body'>
 <div id='loader'>
 	<div class="valign-wrapper">
 		<img class="valign spinning" src="{{ site.url }}/img/icon.png">
@@ -21,7 +22,7 @@
 						{% endif %}
 
 						<li class="{% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
-							<a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
+							<a class="internal-link {{ current }}" href="{{ link.url }}">{{ link.text }}</a>
 						</li>
 					{% endfor %}
 					<li><a href="https://burstforum.com">Forum</a></li>
