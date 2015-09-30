@@ -156,12 +156,6 @@ nav a img{
 
 
 /* Docs menu */
-#docs-menu ul li.active a{
-	color:#fff;
-}
-#docs-menu ul li.active{
-	background-color:#2196f3;
-}
 #docs-page{
 	padding-left: 240px;
 }
