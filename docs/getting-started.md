@@ -1,7 +1,7 @@
 ---
 title: Getting started
 layout: docs
-permalink: /docs/mining/
+permalink: /docs/getting-started/
 group: "docs"
 subgroup: "getting-started"
 ---

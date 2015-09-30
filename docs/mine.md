@@ -1,6 +1,8 @@
 ---
-title: Mining | Docs
+title: Mining
 layout: docs
-permalink: /docs/mining/
+permalink: /docs/getting-started/mining/
 group: "getting-started"
 ---
+
+#Mining
