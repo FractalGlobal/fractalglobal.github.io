@@ -112,12 +112,28 @@ nav a img{
 	to {transform:rotate(360deg);}
 }
 
-.spinning{
-	-webkit-animation: spin 2s infinite linear;
-	-moz-animation: spin 2s infinite linear;
-	-ms-animation: spin 2s infinite linear;
+@-webkit-keyframes pulsate {
+	0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+	50% {opacity: 1.0;}
+	100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+@keyframes pulsate {
+	0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+	50% {opacity: 1.0;}
+	100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+@-moz-keyframes pulsate {
+	0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+	50% {opacity: 1.0;}
+	100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
 
-	animation: spin 2s infinite linear;
+.spinning{
+	-webkit-animation: pulsate 2s infinite linear;
+	-moz-animation: pulsate 2s infinite linear;
+	-ms-animation: pulsate 2s infinite linear;
+
+	animation: pulsate 2s infinite linear;
 }
 
 
