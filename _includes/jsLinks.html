@@ -37,7 +37,7 @@
 				$("#loader").show();
 				$('#page-body').load(href + " #page-body-inner", function(){
 					$("#loader").hide();
-					$('#primary').fadeIn('slow');
+					$('#page-body').fadeIn('slow');
 				});
 			});
 			/*
@@ -51,7 +51,7 @@
 			$("#loader").show();
 			$('#page-body').load("http://fractalglobal.github.io" + location.pathname + " #page-body-inner", function(){
 				$("#loader").hide();
-				$('#primary').fadeIn('slow');
+				$('#page-body').fadeIn('slow');
 			});
 		});
 	};
