@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: docs
+title: Docs
+permalink: /docs/
 group: "nav"
 ---
 

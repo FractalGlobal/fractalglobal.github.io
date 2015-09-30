@@ -17,16 +17,9 @@
 				</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down desktop-navigation">
-					{% for link in site.navigation %}
-						{% assign current = nil %}
-						{% if page.url == link.url or page.layout == link.layout %}
-							{% assign current = 'active' %}
-						{% endif %}
-
-						<li class="{% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
-							<a class="internal-link {{ current }}" href="{{ link.url }}">{{ link.text }}</a>
-						</li>
-					{% endfor %}
+					{% assign pages_list = site.pages %}
+					{% assign group = 'nav' %}
+					{% include pages_list.html %}
 					<li><a href="https://burstforum.com">Forum</a></li>
 					<li><a href="http://burstcoin.biz">Block explorer</a></li>
 					<li><a href="http://faucet.burstcoin.info">Faucet</a></li>
@@ -41,16 +34,9 @@
 				</ul>
 			</div>
 			<ul class="side-nav" id="mobile-demo">
-				{% for link in site.navigation %}
-					{% assign current = nil %}
-					{% if page.url == link.url or page.layout == link.layout %}
-						{% assign current = 'active' %}
-					{% endif %}
-
-					<li class="{% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
-						<a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
-					</li>
-				{% endfor %}
+				{% assign pages_list = site.pages %}
+				{% assign group = 'nav' %}
+				{% include pages_list.html %}
 				<li><a href="https://burstforum.com">Forum</a></li>
 				<li><a href="http://burstcoin.biz">Block explorer</a></li>
 				<li><a href="http://faucet.burstcoin.info">Faucet</a></li>

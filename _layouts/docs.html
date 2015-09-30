@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+	<body>
+
+		{% include header.html %}
+
+		<div id="page-content">
+			<div id='docs-page'>
+				<nav>
+					<div class="nav-wrapper white z-depth-0">
+						<a class="site-title blue-grey-text" href="{{ site.baseurl }}/docs">
+							Docs
+						</a>
+						<a href="#" data-activates="docs-menu" class="button-collapse"><i class="material-icons blue-grey-text">more_vert</i></a>
+					</div>
+				</nav>
+				<ul id="docs-menu" class="side-nav fixed" style="top:64px;">
+					<li><a href="#!">Home</a></li>
+					<li class="no-padding">
+						<ul class="collapsible collapsible-accordion">
+							<li>
+								<a class="collapsible-header waves-effect waved-dark sidebar-dropdown-title">Getting started<i class="mdi-navigation-arrow-drop-down"></i></a>
+								<div class="collapsible-body">
+									<ul>
+										<li><a href="#!">Wallet</a></li>
+										<li><a href="#!">Mining</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="no-padding">
+						<ul class="collapsible collapsible-accordion">
+							<li>
+								<a class="collapsible-header waves-effect waved-dark sidebar-dropdown-title">Mining<i class="mdi-navigation-arrow-drop-down"></i></a>
+								<div class="collapsible-body">
+									<ul>
+										<li><a href="#!">First</a></li>
+										<li><a href="#!">Second</a></li>
+										<li><a href="#!">Third</a></li>
+										<li><a href="#!">Fourth</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="no-padding">
+						<ul class="collapsible collapsible-accordion">
+							<li>
+								<a class="collapsible-header waves-effect waved-dark sidebar-dropdown-title">Automated transactions<i class="mdi-navigation-arrow-drop-down"></i></a>
+								<div class="collapsible-body">
+									<ul>
+										<li><a href="#!">First</a></li>
+										<li><a href="#!">Second</a></li>
+										<li><a href="#!">Third</a></li>
+										<li><a href="#!">Fourth</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="no-padding">
+						<ul class="collapsible collapsible-accordion">
+							<li>
+								<a class="collapsible-header waves-effect waved-dark sidebar-dropdown-title">API<i class="mdi-navigation-arrow-drop-down"></i></a>
+								<div class="collapsible-body">
+									<ul>
+										<li><a href="#!">First</a></li>
+										<li><a href="#!">Second</a></li>
+										<li><a href="#!">Third</a></li>
+										<li><a href="#!">Fourth</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div id='docs-content'>
+					{{ content }}
+				</div>
+
+				{% include footer.html %}
+				{% include jsLinks.html %}
+			</div>
+		</div>
+	</body>
+
+</html>
