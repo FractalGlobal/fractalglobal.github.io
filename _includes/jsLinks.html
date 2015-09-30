@@ -23,6 +23,13 @@
 		$('#page-body').fadeOut('slow', function(){
 			$("#loader").show();
 			$('#page-body').load(href + " #page-body-inner", function(){
+				
+				// Re activate plugins
+				$('.collapsible').collapsible();
+				$('.materialboxed').materialbox();
+				$('.button-collapse').sideNav();
+				
+				// Ditch loader and show page
 				$("#loader").hide();
 				$('#page-body').fadeIn('slow');
 			});
