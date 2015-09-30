@@ -1,22 +1,23 @@
 {% for node in pages_list %}
 	{% if group == null or group == node.group %}
-		{% if page.url == node.url %}
-			<li class="active"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
-		{% else %}
-			<li><a class='blue-grey-text internal-link' href="{{node.url}}">{{node.title}}</a></li>
-		{% endif %}
-
-		<!-- Dropdown -->
-		{% for subnode in pages_list %}
-			{% if node.subgroup == subnode.group %}
-				{% if page.url == subnode.url %}
-					<li class="active"><a class='blue-grey-text internal-link' href="{{subnode.url}}" class="active">{{subnode.title}}</a></li>
-				{% else %}
-					<li><a class='blue-grey-text internal-link' href="{{subnode.url}}">{{subnode.title}}</a></li>
-				{% endif %}
+		{{if node.subgroup == null}}
+			{% if page.url == node.url %}
+				<li class="active"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
+			{% else %}
+				<li><a class='blue-grey-text internal-link' href="{{node.url}}">{{node.title}}</a></li>
 			{% endif %}
-		{% endfor %}
-
+		{{else}}
+			<!-- Dropdown -->
+			{% for subnode in pages_list %}
+				{% if node.subgroup == subnode.group %}
+					{% if page.url == subnode.url %}
+						<li class="active"><a class='blue-grey-text internal-link' href="{{subnode.url}}" class="active">{{subnode.title}}</a></li>
+					{% else %}
+						<li><a class='blue-grey-text internal-link' href="{{subnode.url}}">{{subnode.title}}</a></li>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		{{endif}}
 	{% endif %}
 {% endfor %}
 
