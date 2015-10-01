@@ -5,14 +5,6 @@
 
 		{% include header.html %}
 		<div id='docs-page'>
-			<nav>
-				<div class="nav-wrapper white z-depth-0">
-					<a class="site-title blue-grey-text" href="{{ site.baseurl }}/docs">
-						Docs
-					</a>
-					<a data-activates="docs-menu" class="button-collapse"><i class="material-icons blue-grey-text">more_vert</i></a>
-				</div>
-			</nav>
 			<ul id="docs-menu" class="side-nav fixed" style="top:64px;">
 				<li><a href="#!">Home</a></li>
 				{% assign pages_list = site.pages %}
@@ -20,6 +12,7 @@
 				{% include pages_list.html %}
 			</ul>
 			<div id='docs-content'>
+				<a data-activates="docs-menu" class="button-collapse"><i class="material-icons blue-grey-text">more_vert</i></a>
 				{{ content }}
 			</div>
 			{% include footer.html %}
