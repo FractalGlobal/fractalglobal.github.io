@@ -8,7 +8,9 @@
 <script type="text/javascript">
 	//custom JS code
 	$(document).ready(function(){
-		$('.collapsible').collapsible();
+		$('.collapsible').collapsible({
+			accordion : true
+		});
 		$('.materialboxed').materialbox();
 		$('.button-collapse').sideNav();
 		
@@ -25,7 +27,9 @@
 			$('#page-body').load(href + " #page-body-inner", function(){
 				
 				// Re activate plugins
-				$('.collapsible').collapsible();
+				$('.collapsible').collapsible({
+					accordion : true
+				});
 				$('.materialboxed').materialbox();
 				$('.button-collapse').sideNav();
 				
@@ -56,5 +60,10 @@
 	window.onpopstate = function(e){
 		changePage("http://fractalglobal.github.io" + location.pathname)
 	};
+	
+	//Show active collapsible
+	$( ".collapsible-body ul li.active" )
+		.parentsUntil( ".collapsible-body" )
+		.addClass( "active");
 	
 </script>

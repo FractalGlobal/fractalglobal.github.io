@@ -5,4 +5,4 @@ permalink: /docs/getting-started/wallet/
 group: "getting-started"
 ---
 
-#Wallet
+# Wallet

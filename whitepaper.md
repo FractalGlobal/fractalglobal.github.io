@@ -5,4 +5,4 @@ permalink: /whitepaper/
 group: "nav"
 ---
 
-Whitepaper
+# Whitepaper
