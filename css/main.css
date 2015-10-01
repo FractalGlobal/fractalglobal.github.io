@@ -191,5 +191,5 @@ a.site-title{
 .waves-effect.waves-blue:hover{
 	/* The alpha value allows the text and background color
 	of the button to still show through. */
-	background-color: rgba(33, 150, 243, 0.55);
+	background-color: rgba(33, 150, 243, 0.35);
 }
