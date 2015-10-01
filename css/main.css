@@ -179,3 +179,6 @@ a.site-title{
 	padding:15px;
 	margin:0;
 }
+#docs-menu ul li ul li{
+	width:100%;
+}
