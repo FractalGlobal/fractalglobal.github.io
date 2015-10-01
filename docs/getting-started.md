@@ -5,3 +5,5 @@ permalink: /docs/getting-started/
 group: "docs"
 subgroup: "getting-started"
 ---
+
+# Getting started

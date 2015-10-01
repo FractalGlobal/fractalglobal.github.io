@@ -5,4 +5,6 @@ permalink: /docs/getting-started/mining/
 group: "getting-started"
 ---
 
-#Mining
+# Mining
+
+Fractal uses PoI mining
