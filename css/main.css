@@ -6,7 +6,7 @@ html{
 	margin:0;
 	padding:0;
 }
-nav ul.desktop-navigation li.active,nav ul.desktop-navigation li:hover{
+nav ul.desktop-navigation li.active,nav ul.desktop-navigation li:hover,nav ul.desktop-navigation li.waves-effect:hover{
 	background:rgba(0,0,0,0);
 }
 nav ul.desktop-navigation li.active a{
