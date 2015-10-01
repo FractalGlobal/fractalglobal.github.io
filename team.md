@@ -5,7 +5,7 @@ permalink: /team/
 group: "nav"
 ---
 
-## Team
+<h3 class='blue-grey-text'>Team</h3>
 
 <div class='row blue-grey-text'>
 	<div class='col s12 m6 l3 center'>
