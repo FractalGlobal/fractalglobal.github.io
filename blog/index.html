@@ -1,29 +1,55 @@
 ---
 layout: default
 title: Blog
-group: "nav"
 ---
-	
-{% for post in site.posts limit:50 %}
-	<div class="row">
-		<div class="col s12 m6">
-			<div class="card indigo darken-1">
-				<div class="card-content white-text">
-					<span class="card-title">
-						<a href="{{ post.url }}" class="internal-link white-text">{{ post.title }}</a>
-					</span>
-					<p>
-						{% if post.description %}
-							{{ post.description | markdownify }}
-						{% else %}
-							{{ post.excerpt | strip_html }}
-						{% endif %}
-					</p>
-				</div>
-				<div class="card-action">
-					<a href="{{ post.url }}">Read more</a>
-				</div>
-			</div>
+
+<div class="container">
+	<!-- This loops through the paginated posts -->
+	{% for post in paginator.posts %}
+	<div class="card">
+		<div class="card-content dark-text">
+			<span class="card-title dark-text">{{ post.title }}</span>
+			<br>
+			<i>{{ post.date | date: "%b %d, %Y" }}</i>
 		</div>
+		<div class="divider"></div>
+		<div class="card-content dark-text">
+			{{ post.excerpt }}
+		</div>
+		<div class="card-action">
+			<a class="internal-link right primary-text btn-flat white waves-effect" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+		</div>
+	</div>
+	
 	{% endfor %}
+
+	<!-- Pagination links -->
+	{% if paginator.total_pages > 1 %}
+	<div class="center">
+		{% if paginator.previous_page %}
+		<a class="internal-link btn-floating btn-large waves-effect waves-light primary" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+		{% else %}
+		<a class="disabled btn-floating btn-large waves-effect waves-light primary">&laquo;</a>
+		{% endif %}
+
+		{% for page in (1..paginator.total_pages) %}
+		{% if page == paginator.page %}
+		<a class="btn-floating btn-large waves-effect waves-light primary-text white">{{ page }}</a>
+		{% elsif page == 1 %}
+		<a  class="internal-link btn-floating btn-large waves-effect waves-light primary" href="{{ site.baseurl }}/blog/">{{ page }}</a>
+		{% else %}
+		<a  class="internal-link btn-floating btn-large waves-effect waves-light primary" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+		{% endif %}
+		{% endfor %}
+
+		{% if paginator.next_page %}
+		<a class="internal-link btn-floating btn-large waves-effect waves-light primary" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+		{% else %}
+		<a class="disabled btn-floating btn-large waves-effect waves-light primary">&raquo;</a>
+		{% endif %}
+	</div>
+	{% endif %}
+	
+	
+	
 </div>
