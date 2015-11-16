@@ -82,7 +82,7 @@
 	window.onpopstate = function(e){
 		var newLocation = getLocation();
 		if(newLocation != currentLocation) {
-			changePage("{{site.url}}{{site.baseurl}}" + location.pathname);
+			changePage("{{site.url}}" + location.pathname);
 		}
 	};
 	
