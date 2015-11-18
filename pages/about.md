@@ -5,6 +5,8 @@ permalink: /about/
 group: "nav"
 ---
 
+####About
+
 Fractal is a decentralized network that powers a digital currency, Crystals.  Crystals are designed to be fast, secure, and is printed into existence and equally paid to all who want to help bookkeep for the network. Anyone who wants to can plug into the network with no fancy equipment or investment required to get started. Plug in and get paid just for running a simple computer program!
 
 Fractal is made with state of the art technology.  Fractal was written in Rust, for increased security and speed and uses NTRU encryption which is faster, quantum proof encryption. But Fractal’s biggest contribution is that is has also cracked the problem of how to determine whether or not individuals on it’s network are real people, therefore allowing them to all be treated equally regardless of how much money they have spent buying fancy otherwise useless mining equipment or coins.
