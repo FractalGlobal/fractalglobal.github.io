@@ -7,13 +7,13 @@
 <script type="text/javascript" src="{{ site.baseurl }}/js/materialize.min.js"></script>
 <script type="text/javascript">
 	
-	
+	//Reszing things based on screensize
 	function sizes(){
 		$("#docs-anchor").width( ( $("#docs-item-content").width() / 3 ) );
 	}
 	
+	//init materialize stuff
 	function materialInit(){
-		//init materialize stuff
 		$('.button-collapse').sideNav({closeOnClick: true});
 		$('#docs-anchor').pushpin({
 			top: 124,
@@ -27,11 +27,13 @@
 		sizes();
 	};
 	
+	//When initial page loads remove preloader
 	$(document).ready(function(){
 		materialInit();
 		$("#preloader").fadeOut(600).hide();
 	});
 	
+	//Fix sizes on resize
 	$(window).resize(function(){
 		sizes();
 	});
@@ -41,21 +43,38 @@
 	function getLocation() {
 		return location.pathname + location.search;
 	}
-
-	var currentLocation = getLocation();
 	
-	//Function
+	//Vars
+	var currentLocation = getLocation();
+	var previousHistory = window.location.href;
+	
+	// Page changer
 	function changePage(href){
+		//Show the preloader
 		$("#preloader").show();
-		$('#page-body').load(href + " #page-body-inner", function(){
-
+		
+		//Load content
+		$('#page-body').load(href + " #page-body-inner", function(response, status, xhr){
+			
+			// Check for error
+			if ( status == "error" ) {
+				//For console
+				console.log(xhr);
+				//Show a toast with the error
+				Materialize.toast("<span class='red-text'>Error! &nbsp;</span> (code: &nbsp; <b>" + xhr.status + "</b>)", 4000,"white primary-text");
+				
+				
+				console.log(previousHistory);
+				history.pushState(null, null, previousHistory);
+			}
+			
 			// Re activate plugins
 			materialInit()
 			
 			// Ditch loader and show page
 			$("#preloader").hide();
 			
-			//animate scrolling back to the top
+			// Animate scrolling back to the top
 			$("html, body").animate({ scrollTop: 0 }, "slow");
 			
 		});
@@ -63,25 +82,37 @@
 	}
 	// Link click
 	$(document).on("click", ".internal-link", function(e){
+		//Make sure the browser is new enough
 		if (typeof(window.history.pushState) === typeof(Function)){
-			$("#preloader").show();
-			e.preventDefault();
-			var href = $(this).attr("href");
-			history.pushState(null, null, href);
-			//changePage(href);
 			
-			changePage(href)
-			/*
-			$("#page-body").load( href + " #page-body-inner",function(){
-				$("#loader").hide();
-			});*/
+			//Show preloader
+			$("#preloader").show();
+			
+			//Stop default changing page
+			e.preventDefault();
+			
+			//Clicked link's href
+			var href = $(this).attr("href");
+			
+			//Store the old history
+			previousHistory = window.location.href;
+			
+			//set the history
+			history.pushState(null, null, href);
+			
+			//Change the page contents
+			changePage(href);
 		}
 	});
 	
 	// Browser back button
 	window.onpopstate = function(e){
+		
+		//New loaction from back button
 		var newLocation = getLocation();
+		//Check the loaction has actually changed before acting on it
 		if(newLocation != currentLocation) {
+			// If yes, change the page
 			changePage("{{site.url}}" + location.pathname);
 		}
 	};
