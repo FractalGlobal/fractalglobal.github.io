@@ -8,7 +8,7 @@
 
 /* Color scheme */
 $primary	: $grey;
-$accent		: $pink;
+$accent		: $cyan;
 /* New variables to reduce map-get calls, don't touch this unless you want to change the base shade */
 $primary-base	: map-get($primary, base);
 $accent-base	: map-get($accent, base);
@@ -60,6 +60,7 @@ html {
 	overflow-x: hidden;
 	color: $light-text;
 	background-color: map-get($primary, darken-3);
+	background: url("/img/background.png") fixed;
 }
 code{
 	background-color: rgba(0,0,0,0.05);
