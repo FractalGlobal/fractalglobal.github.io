@@ -7,7 +7,7 @@
 @import "syntax-highlighting";
 
 /* Color scheme */
-$primary	: $indigo;
+$primary	: $grey;
 $accent		: $pink;
 /* New variables to reduce map-get calls, don't touch this unless you want to change the base shade */
 $primary-base	: map-get($primary, base);
@@ -15,10 +15,10 @@ $accent-base	: map-get($accent, base);
 
 /* Advanced colors */
 $dark-text	: #444;
-$light-text	: #FFF;
-$linkColor	: map-get($accent, darken-1);
+$light-text	: #ddd;
+$linkColor	: map-get($accent, lighten-2);
 $navColors: (
-	"background"	: #fff,
+	"background"	: map-get($primary, darken-4),
 	"underline"		: $accent-base,
 	"li-color"		: map-get($primary, lighten-1)
 );
@@ -58,7 +58,8 @@ $custom_colors: (
 /* Customize standard html */
 html {
 	overflow-x: hidden;
-	color: $dark-text;
+	color: $light-text;
+	background-color: map-get($primary, darken-3);
 }
 code{
 	background-color: rgba(0,0,0,0.05);
@@ -91,6 +92,9 @@ blockquote {
 /* Default colors of materialize classes */
 .btn{
 	background-color: $primary-base;
+}
+.btn-flat{
+	color:$linkColor;
 }
 .btn:hover{
 	color:$light-text;

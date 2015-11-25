@@ -23,8 +23,8 @@ group: "nav"
 		</p>
 		<div class="divider"></div>
 		<div class="section">
-			<a class="btn-flat accent-text waves-effect">Website</a>
-			<a class="right btn-flat accent-text waves-effect">Contact</a>
+			<a class="btn-flat waves-effect">Website</a>
+			<a class="right btn-flat waves-effect">Contact</a>
 		</div>
 	</div>
 </div>
@@ -44,8 +44,8 @@ group: "nav"
 		</p>
 		<div class="divider"></div>
 		<div class="section">
-			<a class="btn-flat accent-text waves-effect">Website</a>
-			<a class="right btn-flat accent-text waves-effect">Contact</a>
+			<a class="btn-flat waves-effect">Website</a>
+			<a class="right btn-flat waves-effect">Contact</a>
 		</div>
 	</div>
 </div>
@@ -64,8 +64,8 @@ group: "nav"
 		</p>
 		<div class="divider"></div>
 		<div class="section">
-			<a class="btn-flat accent-text waves-effect">Website</a>
-			<a class="right btn-flat accent-text waves-effect">Contact</a>
+			<a class="btn-flat waves-effect">Website</a>
+			<a class="right btn-flat waves-effect">Contact</a>
 		</div>
 	</div>
 </div>
