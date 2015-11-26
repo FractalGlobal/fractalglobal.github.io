@@ -29,26 +29,28 @@ members:
 ---
 
 <div class="row">
-	<div class="col s12 m8 offset-m2">
+	<div class="col s12 m12">
 		<h1 class="accent-text thin">Team</h1>
 
 		<div class="divider"></div>
 	</div>
 </div>
 
-{% for member in page.members %}
-	<div class="row">
-		<div class="col s12 m8 offset-m2">
+<div class="row">
+	{% for member in page.members %}
+		<div class="col s12 m6">
 			<div class="card primary darken-2">
 				<div style="height:250px; overflow:hidden;" class="card-image">
 					<img src="{{site.baseurl}}/img/profile/{{member.background}}">
-					<span class="card-title primary-text text-lighten-2">
+					<span style="width:100%;" class="card-title">
 						<img class="circle left" style="height:80px; width:80px; display:inline; border-radius:50% 50%;" src="{{site.baseurl}}/img/profile/{{member.picture}}">
-						{{member.name}}
-						<br>
-						<small style="font-size:12px;">
-							<b>{{member.role}}</b>
-						</small>
+						<span style="padding-left:10px;">
+							{{member.name}}
+							<br>
+							<small style="padding-left:10px; font-size:12px;">
+								<b>{{member.role}}</b>
+							</small>
+						</span>
 					</span>
 				</div>
 				<div class="card-content">
@@ -60,5 +62,5 @@ members:
 				</div>
 			</div>
 		</div>
-	</div>
-{% endfor %}
+	{% endfor %}
+</div>
