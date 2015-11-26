@@ -376,8 +376,43 @@ footer.docs-footer{
 	}
 }
 
+/* Forms */
+.input-field{
+	/* label color */
+	label {
+		color: #fff;
+	}
+	/* label focus color */
+	input[type=text], input[type=password], input[type=email], textarea.materialize-textarea{
+		&:focus{
+			/* label underline focus color */
+			border-bottom: 1px solid map-get($accent,base);
+			box-shadow: 0 1px 0 0 map-get($accent,base);
+		
+			+ label {
+				color: map-get($accent,base);
+			}
+		}
+		/* valid color */
+		&.valid {
+			border-bottom: 1px solid #000;
+			box-shadow: 0 1px 0 0 #000;
+		}
+		/* invalid color */
+		&.invalid {
+			border-bottom: 1px solid #000;
+			box-shadow: 0 1px 0 0 #000;
+		}
+	}
+	/* icon prefix focus color */
+	.prefix.active {
+		color: #000;
+	}
+}
 
-
+button[type=submit].btn-flat:active, button.btn-flat:focus{
+	background-color:transparent;
+}
 
 
 .profile-pic{

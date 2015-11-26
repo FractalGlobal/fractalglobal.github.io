@@ -117,4 +117,30 @@
 		}
 	};
 	
+	// Contact form
+	$('#contact-form').submit(function(e) {
+		e.preventDefault();
+		console.log($(this).serialize());
+		$.ajax({
+			url: '//formspree.io/irontiga@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			beforeSend: function() {
+				Materialize.toast('Sending...', 4000,"white primary-text");
+				//$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+			},
+			success: function(data) {
+				Materialize.toast('<b>Success!</b>', 4000,"white teal-text");
+				/*$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--success">Message sent!</div>');*/
+			},
+			error: function(err) {
+				Materialize.toast('Error!', 4000,"white red-text");
+				/*$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');*/
+			}
+		});
+	});
+	
 </script>

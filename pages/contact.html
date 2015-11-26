@@ -1,0 +1,45 @@
+---
+layout: page
+title: Contact
+permalink: /contact/
+group: "nav"
+---
+
+<br>
+<h4 class="accent-text thin">Contact us</h4>
+
+<div class="row">
+	<form class="col s12" id="contact-form" action="//formspree.io/irontiga@gmail.com">
+		<input type="text" name="_gotcha" style="display:none" />
+		<div class="row">
+			<div class="input-field col s6">
+				<input id="first_name" type="text" class="validate" name="first_name">
+				<label for="first_name">First Name</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="last_name" type="text" class="validate" name="last_name">
+				<label for="last_name">Last Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input id="email" type="email" class="validate" name="_replyto">
+				<label for="email">Email</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="subject" type="text" class="validate" name="_subject" >
+				<label for="subject">Subject</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="textarea1" class="materialize-textarea" name="message"></textarea>
+				<label for="textarea1">Textarea</label>
+			</div>
+		</div>
+		<!--<input type="hidden" name="_cc" value="another@email.com" />-->
+		<button class="btn-flat waves-effect right" type="submit">
+			Submit <i class="material-icons right">send</i>
+		</button>
+	</form>
+</div>
