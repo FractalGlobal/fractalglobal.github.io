@@ -413,7 +413,13 @@ footer.docs-footer{
 button[type=submit].btn-flat:active, button.btn-flat:focus{
 	background-color:transparent;
 }
+.hidden{
+	display:none;
+}
 
+.spinner-cyan, .spinner-cyan-only{
+	border-color: $accent-base;
+}
 
 .profile-pic{
 	height:150px;
