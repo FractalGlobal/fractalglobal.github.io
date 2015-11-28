@@ -196,10 +196,7 @@
 			}
 		});
 		if(!isTab || href == "/"){
-			$(".active-indicator").css({
-				"left" : 0,
-				"width" : 0
-			});
+			$("nav ul#side-nav li.active").removeClass("active");
 		}
 		else{
 			$("nav ul#side-nav li.active").removeClass("active");
