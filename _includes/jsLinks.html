@@ -31,7 +31,7 @@
 	$(document).ready(function(){
 		materialInit();
 		$("#preloader").fadeOut(600).hide();
-		navTabs($("nav ul.desktop-navigation li.active a").attr("href"));
+		activateTab($("nav ul.desktop-navigation li.active a").attr("href"));
 	});
 	
 	//Fix sizes on resize
@@ -76,7 +76,7 @@
 			$("#preloader").hide();
 			
 			// Change active tab
-			navTabs(href);
+			activateTab(href);
 			
 			// Animate scrolling back to the top
 			$("html, body").animate({ scrollTop: 0 }, "slow");
@@ -158,7 +158,7 @@
 	
 	
 	// Navbar underline
-	function navTabs(href){
+	function activateTab(href){
 		
 		var isTab = false;
 		$("nav ul.desktop-navigation li a").each(function(){
@@ -184,6 +184,26 @@
 				"left" : activateLi.position().left,
 				"width" : activateLi.width()
 			});
+		}
+		
+		
+		var isTab = false;
+		$("nav ul#side-nav li a").each(function(){
+			if(href.indexOf($(this).attr("href")) > -1){
+				toActivate = $(this).parent();
+				isTab = true;
+				return false;
+			}
+		});
+		if(!isTab || href == "/"){
+			$(".active-indicator").css({
+				"left" : 0,
+				"width" : 0
+			});
+		}
+		else{
+			$("nav ul#side-nav li.active").removeClass("active");
+			toActivate.addClass("active");
 		}
 	};
 	
