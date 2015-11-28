@@ -4,29 +4,30 @@
 	</div>
 </div>
 
+<header class="site-header">
+	<div class='navbar-fixed'>
+		<nav>
+			<div class="nav-wrapper">
+				<div class='container'>
+					<a href="{{site.baseurl}}/" class="internal-link brand-logo primary-text text-lighten-3 thin">
+						<img src='{{ site.baseurl }}/img/logo_inverse.png'>
+					</a>
+					<a data-activates="mobile-demo" class="button-collapse"><i class="material-icons accent-text">menu</i></a>
+					<ul class="right hide-on-med-and-down desktop-navigation">
+						{% assign navType = 'desktop' %}
+						{% include nav.html %}
+						<div class="active-indicator"></div>
+					</ul>
+				</div>
+				<ul class="side-nav" id="mobile-demo">
+					{% assign navType = 'mobile' %}
+					{% include nav.html %}
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
+
 <div id='page-body'>
 	<div id='page-body-inner'>
-
-		<header class="site-header">
-			<div class='navbar-fixed'>
-				<nav>
-					<div class="nav-wrapper">
-						<div class='container'>
-							<a href="{{site.baseurl}}/" class="internal-link brand-logo primary-text text-lighten-3 thin">
-								<img src='{{ site.baseurl }}/img/logo_inverse.png'>
-							</a>
-							<a data-activates="mobile-demo" class="button-collapse"><i class="material-icons accent-text">menu</i></a>
-							<ul class="right hide-on-med-and-down desktop-navigation">
-								{% assign navType = 'desktop' %}
-								{% include nav.html %}
-							</ul>
-						</div>
-						<ul class="side-nav" id="mobile-demo">
-							{% assign navType = 'mobile' %}
-							{% include nav.html %}
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</header>
 		<main>

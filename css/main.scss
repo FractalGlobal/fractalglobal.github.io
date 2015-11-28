@@ -141,7 +141,7 @@ nav {
 			background: transparent;
 		}
 		&.active {
-			border-bottom: 3px solid map-get($navColors,underline);
+			//border-bottom: 3px solid map-get($navColors,underline);
 			height: 64px;
 		}
 	}
@@ -421,6 +421,36 @@ button[type=submit].btn-flat:active, button.btn-flat:focus{
 	border-color: $accent-base;
 }
 
+
+
+
 .profile-pic{
 	height:150px;
+}
+.big-icon{
+	font-size:80px;
+	color:#fff;
+	transition:0.5s ease;
+	padding-bottom:13px;
+	padding-top:13px;
+}
+
+.home-features .col:hover{
+	.big-icon{
+		color: $accent-base;
+		transition:0.5s ease;
+		font-size:100px;
+		padding-bottom:0;
+		padding-top:0;
+	}
+}
+
+
+.active-indicator{
+	background-color: map-get($navColors,underline);
+	position:absolute;
+	width:50px;
+	height:3px;
+	bottom:0;
+	transition: 0.4s ease;
 }

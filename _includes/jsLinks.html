@@ -31,6 +31,7 @@
 	$(document).ready(function(){
 		materialInit();
 		$("#preloader").fadeOut(600).hide();
+		navTabs($("nav ul.desktop-navigation li.active a").attr("href"));
 	});
 	
 	//Fix sizes on resize
@@ -74,10 +75,20 @@
 			// Ditch loader and show page
 			$("#preloader").hide();
 			
+			// Change active tab
+			navTabs(href);
+			
 			// Animate scrolling back to the top
 			$("html, body").animate({ scrollTop: 0 }, "slow");
 			
 		});
+		
+		//Load the title tag
+		$('#title').load(href + " #title", "", function(data) {
+			document.title = $(this).text();
+		});
+		
+		// Set new current location
 		currentLocation = getLocation();
 	}
 	// Link click
@@ -113,7 +124,7 @@
 		//Check the loaction has actually changed before acting on it
 		if(newLocation != currentLocation) {
 			// If yes, change the page
-			changePage("{{site.url}}" + location.pathname);
+			changePage( location.pathname);
 		}
 	};
 	
@@ -137,11 +148,43 @@
 				$("#contact-submit").removeClass("hidden");
 			},
 			error: function(err) {
-				Materialize.toast('<b>Error!</b> Please check your submission', 4000,"white red-text");
+				Materialize.toast('<b>Error!</b> &nbsp; Please check your submission', 4000,"white red-text");
 				$("#contact-loading").addClass("hidden");
 				$("#contact-submit").removeClass("hidden");
 			}
 		});
 	});
+	
+	
+	
+	// Navbar underline
+	function navTabs(href){
+		
+		var isTab = false;
+		$("nav ul.desktop-navigation li a").each(function(){
+			if(href.indexOf($(this).attr("href")) > -1){
+				toActivate = $(this).parent();
+				isTab = true;
+				return false;
+			}
+		});
+		if(!isTab || href == "/"){
+			$(".active-indicator").css({
+				"left" : 0,
+				"width" : 0
+			});
+		}
+		else{
+			$("nav ul.desktop-navigation li.active").removeClass("active");
+			toActivate.addClass("active");
+			
+			activateLi = $("nav ul.desktop-navigation li.active");
+
+			$(".active-indicator").css({
+				"left" : activateLi.position().left,
+				"width" : activateLi.width()
+			});
+		}
+	};
 	
 </script>
