@@ -113,6 +113,9 @@
 			
 			//Change the page contents
 			changePage(href);
+			
+			// Close sidenav
+			//$('.button-collapse').sideNav('hide');
 		}
 	});
 	
@@ -188,7 +191,7 @@
 		
 		
 		var isTab = false;
-		$("nav ul#side-nav li a").each(function(){
+		$("nav ul#mobile-menu li a").each(function(){
 			if(href.indexOf($(this).attr("href")) > -1){
 				toActivate = $(this).parent();
 				isTab = true;
@@ -196,10 +199,10 @@
 			}
 		});
 		if(!isTab || href == "/"){
-			$("nav ul#side-nav li.active").removeClass("active");
+			$("nav ul#mobile-menu li.active").removeClass("active");
 		}
 		else{
-			$("nav ul#side-nav li.active").removeClass("active");
+			$("nav ul#mobile-menu li.active").removeClass("active");
 			toActivate.addClass("active");
 		}
 	};
