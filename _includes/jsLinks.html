@@ -191,18 +191,16 @@
 		
 		
 		var isTab = false;
-		$("nav ul#mobile-menu li a").each(function(){
+		console.log($("#mobile-menu li a"));
+		$("#mobile-menu li a").each(function(){
 			if(href.indexOf($(this).attr("href")) > -1){
 				toActivate = $(this).parent();
 				isTab = true;
 				return false;
 			}
 		});
-		if(!isTab || href == "/"){
-			$("nav ul#mobile-menu li.active").removeClass("active");
-		}
-		else{
-			$("nav ul#mobile-menu li.active").removeClass("active");
+		$("#mobile-menu li.active").removeClass("active");
+		if(isTab || href !== "/"){
 			toActivate.addClass("active");
 		}
 	};

@@ -163,6 +163,7 @@ nav {
 
 /* Sidenav, for docs page defaults and on mobile */
 .side-nav, .side-nav.fixed{
+	background-color: map-get($primary, darken-3);
 	.collapsible-header{
 		font-weight:bold;
 		max-width:100%;
@@ -180,15 +181,15 @@ nav {
 			a{
 				margin:0;
 				max-width:100%;
-				color:$dark-text;
+				color: #fff;
 			}
 			&.active{
-				background-color: $primary-base;
+				background-color: $accent-base;
 				a{
-					color:$dark-text;
+					color: #fff;
 				}
 				> a{
-					color:$light-text;
+					color: #fff;
 				}
 			}
 		}
@@ -201,15 +202,16 @@ nav {
 			background-color: inherit;
 		}
 		&.active{
-			background-color: $primary-base;
+			background-color: $accent-base;
 			> a{
-				color:$light-text;
+				color: #fff;
 			}
 		}
 		a{
 			line-height:50px;
 			height:50px;
 			margin:0;
+			color: #fff;
 		}
 	}
 }
