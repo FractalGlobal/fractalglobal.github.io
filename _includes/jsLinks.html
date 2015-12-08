@@ -34,6 +34,10 @@
 		activateTab($("nav ul.desktop-navigation li.active a").attr("href"));
 	});
 	
+	$(window).resize(function(){
+		activateTab($("nav ul.desktop-navigation li.active a").attr("href"));
+	});
+	
 	//Fix sizes on resize
 	$(window).resize(function(){
 		sizes();

@@ -382,7 +382,7 @@ footer.docs-footer{
 .input-field{
 	/* label color */
 	label {
-		color: #fff;
+		color: #666;
 	}
 	/* label focus color */
 	input[type=text], input[type=password], input[type=email], textarea.materialize-textarea{
@@ -397,7 +397,7 @@ footer.docs-footer{
 		}
 		/* valid color */
 		&.valid {
-			border-bottom: 1px solid #000;
+			border-bottom: 1px solid #fff;
 			box-shadow: 0 1px 0 0 #000;
 		}
 		/* invalid color */
@@ -451,8 +451,9 @@ button[type=submit].btn-flat:active, button.btn-flat:focus{
 .active-indicator{
 	background-color: map-get($navColors,underline);
 	position:absolute;
-	width:50px;
+	width:0px;
 	height:3px;
 	bottom:0;
+	left:0;
 	transition: 0.4s ease;
 }
