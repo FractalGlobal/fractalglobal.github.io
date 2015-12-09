@@ -18,6 +18,7 @@ function materialInit(){
 	sizes();
 };
 
+
 //When initial page loads remove preloader
 $(document).ready(function(){
 	materialInit();
@@ -82,6 +83,12 @@ function changePage(href){
 	$('#title').load(href + " #title", "", function(data) {
 		document.title = $(this).text();
 	});
+	
+	console.log(href);
+	// If forum page
+	if(href == "/forum/"){
+		window.location.reload();
+	};
 
 	// Set new current location
 	currentLocation = getLocation();
@@ -186,7 +193,7 @@ function activateTab(href){
 
 
 	var isTab = false;
-	console.log($("#mobile-menu li a"));
+	//console.log($("#mobile-menu li a"));
 	$("#mobile-menu li a").each(function(){
 		if(href.indexOf($(this).attr("href")) > -1){
 			toActivate = $(this).parent();
@@ -198,4 +205,4 @@ function activateTab(href){
 	if(isTab || href !== "/"){
 		toActivate.addClass("active");
 	}
-};
+}
