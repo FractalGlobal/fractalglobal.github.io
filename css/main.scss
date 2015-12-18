@@ -386,6 +386,7 @@ footer.docs-footer{
 	}
 	/* label focus color */
 	input[type=text], input[type=password], input[type=email], textarea.materialize-textarea{
+		color:#666;
 		&:focus{
 			/* label underline focus color */
 			border-bottom: 1px solid map-get($accent,base);
