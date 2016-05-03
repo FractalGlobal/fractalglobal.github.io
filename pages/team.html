@@ -4,13 +4,6 @@ title: Team
 permalink: /team/
 group: "nav"
 members:
- - name: "mczarnek"
-   role: "CEO / Core dev"
-   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet, massa at malesuada ultricies, justo orci luctus eros, eu vulputate nisl sapien non tellus. Quisque eget vestibulum ex."
-   website: ""
-   contact: ""
-   picture: "mczarnek.jpg"
-   background: "mczarnek_blur.jpg"
  - name: "razican"
    role: "Rust expert / core dev"
    description: "IT engineer and space Geek. Translator at CodeIgniter, core developer at OpenStratos and working on Fractal to create a new currency. Studying a master's degree in Information Security."
@@ -18,13 +11,6 @@ members:
    contact: ""
    picture: "razican.jpg"
    background: "razican_blur.jpg"
- - name: "Darrell"
-   role: "Core dev / security and cryptography expert"
-   description: "Darrell Duane started in the Bitcoin world in 2010 after reading an article on Slashdot.  As a Blockchain Consultant, he has supported various startups with the application of Crypto Currencies. With a Masters in Electrical Engineering,  he is a C/C++ and Drupal Web Developer. He spent 5 years working in the credit card industry and 2.5 years working in the Internet Security field before becoming a freelance technologist."
-   website: ""
-   contact: ""
-   picture: "darrell.jpg"
-   background: "darrell_blur.jpg"
  - name: "irontiga"
    role: "Website / UI dev"
    description: "Cryptocurrency enthusiast and friend of mczarnak for over a year, irontiga is responsible for this website and the fractal core UI. He is a self taught developer focusing on web technologies."
@@ -32,9 +18,16 @@ members:
    contact: ""
    picture: "irontiga.png"
    background: "irontiga_blur.png"
+ - name: "mczarnek"
+   role: "CEO / Core dev"
+   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet, massa at malesuada ultricies, justo orci luctus eros, eu vulputate nisl sapien non tellus. Quisque eget vestibulum ex."
+   website: ""
+   contact: ""
+   picture: "http://lorempixel.com/200/200/abstract"
+   background: "http://lorempixel.com/200/200/abstract"
  - name: "Join us!"
    role: "Employee"
-   description: "Are you a Rust expert? A web developer? A security guru? Get in touch, and join the team!"
+   description: "Are you a Rust expert? A web developer? A security guru? Get in touch, and join the team!<br><br><br>"
    website: ""
    contact: ""
    picture: "user.png"
@@ -44,19 +37,21 @@ members:
 
 <div class="row">
 	<div class="col s12 m12">
-		<h1 class="accent-text thin center">Team</h1>
+		<h1 class="accent-text thin">Team</h1>
+
+		<div class="divider"></div>
 	</div>
 </div>
 
 <div class="row">
 	{% for member in page.members %}
 		<div class="col s12 m6">
-			<div class="card white black-text">
+			<div class="card primary darken-2">
 				<div style="height:250px; overflow:hidden;" class="card-image">
 					<img src="{{site.baseurl}}/img/profile/{{member.background}}">
 					<span style="width:100%;" class="card-title">
 						<img class="circle left" style="height:80px; width:80px; display:inline; border-radius:50% 50%;" src="{{site.baseurl}}/img/profile/{{member.picture}}">
-						<span style="padding-left:10px; color:#333;">
+						<span style="padding-left:10px;">
 							{{member.name}}
 							<br>
 							<small style="padding-left:10px; font-size:12px;">
@@ -65,10 +60,8 @@ members:
 						</span>
 					</span>
 				</div>
-				<div class="card-content nano">
-					<div class="nano-content primary-text text-darken-3">
-						<p>{{member.description}}</p>
-					</div>
+				<div class="card-content">
+					<p>{{member.description}}</p>
 				</div>
 				<div class="card-action">
 					<a class="accent-text" href="{{member.website}}">Website</a>

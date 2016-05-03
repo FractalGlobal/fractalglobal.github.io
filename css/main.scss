@@ -59,8 +59,8 @@ $custom_colors: (
 html {
 	overflow-x: hidden;
 	color: $light-text;
-	background-color: map-get($primary, darken-4);
-	/*background: url("/img/background.png") fixed;*/
+	background-color: map-get($primary, darken-3);
+	background: url("/img/background.png") fixed;
 }
 code{
 	background-color: rgba(0,0,0,0.05);
@@ -136,34 +136,25 @@ footer.page-footer{
 
 /* Colors and styling for navbar */
 nav {
-	transition:all 0.5s ease;
 	ul.desktop-navigation li {
-		transition:all 0.5s ease;
 		&.active, &:hover, &.waves-effect:hover {
 			background: transparent;
 		}
-		line-height:64px;
-		a{
-			transition:all 0.5s ease;
-			line-height:64px;
-			color: map-get($navColors,li-color);
-			font-size:16px;
+		&.active {
+			//border-bottom: 3px solid map-get($navColors,underline);
+			height: 64px;
 		}
-		a.btn{
-			line-height: 36px;
-			font-size:1rem;
-			text-shadow:0 0 0;
-			color:#fff;
-			margin-left:20px;
-		}
+	}
+	ul.desktop-navigation li a{
+		color: map-get($navColors,li-color);
 	}
 	a {
 		img {
-			transition:all 0.5s ease;
 			max-height: 64px;
 			padding: 12px;
 			max-width: 100%;
 		}
+		max-width: 70%;
 	}
 	.button-collape{
 		color: map-get($navColors,li-color);
@@ -463,53 +454,7 @@ button[type=submit].btn-flat:active, button.btn-flat:focus{
 	position:absolute;
 	width:0px;
 	height:3px;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);;
 	bottom:0;
 	left:0;
-	transition: all 0.5s;
-}
-
-.top-nav nav{
-	transition:all 0.5s ease;
-	background-color:rgba(33,33,33,0);
-	height: 80px;
-	ul li{
-		transition:all 0.5s ease;
-		height: 80px;
-		line-height:80px;
-		a{
-			transition:all 0.5s ease;
-			line-height:80px;
-			text-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
-		}
-	}
-	a img{
-		transition:all 0.5s ease;
-		max-height:74px;
-	}
-	box-shadow:none;
-}
-
-#content-container{
-	padding-top:80px;
-};
-
-@import "nano";
-.nano{
-	height:150px;
-
-	.nano-content{
-		padding:15px;
-	}
-	.nano-pane{
-		background: rgba(0,0,0,0);
-		border:1px solid rgba(0,0,0,0.1);
-		margin:4px;
-		border-radius:0;
-
-		.nano-slider{
-			background: rgba(0,0,0,0.6);
-			border-radius:0px;
-		}
-	}
+	transition: 0.4s ease;
 }
