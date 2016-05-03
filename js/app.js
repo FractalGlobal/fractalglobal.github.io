@@ -1,6 +1,8 @@
 //Reszing things based on screensize
 function sizes(){
 	$("#docs-anchor").width( ( $("#docs-item-content").width() / 3 ) );
+	activateTab($("nav ul.desktop-navigation li.active a").attr("href"));
+	$(".nano").nanoScroller();
 }
 
 //init materialize stuff
@@ -23,10 +25,6 @@ function materialInit(){
 $(document).ready(function(){
 	materialInit();
 	$("#preloader").fadeOut(600).hide();
-	activateTab($("nav ul.desktop-navigation li.active a").attr("href"));
-});
-
-$(window).resize(function(){
 	activateTab($("nav ul.desktop-navigation li.active a").attr("href"));
 });
 
@@ -206,3 +204,42 @@ function activateTab(href){
 		toActivate.addClass("active");
 	}
 }
+
+
+
+// top-nav
+
+function topNav(){
+	var st = $(window).scrollTop();
+	console.log(st);
+	if(st < 10){
+		$("#navbar").addClass("top-nav");
+	}
+	else{
+		$("#navbar").removeClass("top-nav");
+	}
+};
+
+$(topNav());
+$(window).scroll(function(){
+	topNav();
+});
+
+
+
+
+
+// Fire a resize event when the scrollbar appears (for the forum page)
+var iframe = document.createElement('iframe');
+iframe.id = "window-size-listener";
+iframe.style.cssText = 'height: 0; background-color: transparent; margin: 0; padding: 0; overflow: hidden; border-width: 0; position: absolute; width: 100%;';
+iframe.onload = function() {
+	iframe.contentWindow.addEventListener('resize', function() {
+    try {
+    	var evt = document.createEvent('UIEvents');
+    	evt.initUIEvent('resize', true, false, window, 0);
+    	window.dispatchEvent(evt);
+    } catch(e) {}
+  });
+};
+document.body.appendChild(iframe);
