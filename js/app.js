@@ -146,7 +146,7 @@ $(document).on("submit", "#contact-form", function(e){
 		},
 		success: function(data) {
 			Materialize.toast('<b>Success!</b>', 4000,"white teal-text");
-			$("contact-form").trigger("reset");
+			$("#contact-form").trigger("reset");
 			$("#contact-loading").addClass("hidden");
 			$("#contact-submit").removeClass("hidden");
 		},
